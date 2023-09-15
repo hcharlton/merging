@@ -17,14 +17,14 @@ def merge(x: list[int], y: list[int]) -> list[int]:
     # until one of them is empty
     while i < len(x) and j < len(y):
         if x[i] < y[i]:
-            z.append(x[i])
+            x = z.append(x[i])
             i += 1
         else:
-            z.append(y[j])
+            z = z.append(y[j])
             j += 1
         break
     if i == len(x):
-        z.append(y[:j])
+        z = z.append(y[:j])
     else:
-        z.append(x[:i])
+        z = z.append(x[:i])
     return z
