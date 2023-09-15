@@ -16,15 +16,16 @@ def merge(x: list[int], y: list[int]) -> list[int]:
     # FIXME: fill out the loop so you merge the lists
     # until one of them is empty
     while i < len(x) and j < len(y):
-        if x[i] < y[i]:
-            x = z.append(x[i])
+        if x[i] < y[j]:
+            z.append(x[i])
             i += 1
         else:
-            z = z.append(y[j])
+            z.append(y[j])
             j += 1
-        break
     if i == len(x):
-        z = z.append(y[:j])
+        z += y[j:]
     else:
-        z = z.append(x[:i])
+        x += x[i:]
     return z
+
+print(merge([1,2,3],[3,4,5]))
